@@ -1,0 +1,26 @@
+
+
+<ion-content padding>
+  <div class="main">
+  <ion-avatar>
+      <img id = "logo" src="assets/imgs/dotlogic.png"style="margin: 50px auto">
+  </ion-avatar>  
+  <ion-list>
+      <ion-item class="ion-input"> 
+        <ion-icon item-start name="person"></ion-icon>
+        <ion-input type="text" #username></ion-input>
+      </ion-item>
+
+    </ion-list>
+    <ion-list>
+      <ion-item class="ion-input"> 
+        <ion-icon item-start name="key"></ion-icon>
+        <ion-input type="password" #password></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <div style="text-align:center">
+      <button ion-button class="btnSignIn" (click)="signIn()">SIGN IN</button>
+    </div>
+  </div>
+</ion-content>

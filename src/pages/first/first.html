@@ -1,0 +1,208 @@
+<!--
+  Generated template for the FirstPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-avatar>
+    <img id="logo" src="assets/imgs/dotlogic.png">
+  </ion-avatar>
+
+
+  <ion-avatar start>
+    <img id="profile" src="assets/imgs/Bruce.PNG">
+    <h4 id="username">Bruce Marce</h4>
+  </ion-avatar>
+
+  <ion-toolbar class="toolbar" no-border-top>
+    <ion-segment [(ngModel)]="sections.selectedSection">
+        <ion-segment-button value="{{sections.Home}}" (click)=" getRatingList()">
+            <label id="toolbarlabel">Home</label>
+          </ion-segment-button>
+      <ion-segment-button value="{{sections.first}}" (click)=" getRatingList()">
+        <label id="toolbarlabel">Rating History</label>
+      </ion-segment-button>
+      <ion-segment-button value="{{sections.second}}" (click)="getGraphData()">
+        <label id="toolbarlabel">Charts</label>
+      </ion-segment-button>
+      <ion-segment-button value="{{sections.third}}">
+        <label id="toolbarlabel">My Team</label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content padding>
+  <div [ngSwitch]="sections.selectedSection">
+    <ion-list *ngSwitchCase="'first'" >
+      <!--<button ion-button clear (click)="refreshPage()">Refresh
+      </button>-->
+      <ion-refresher (ionRefresh)="doRefresh($event)">
+          <ion-refresher-content></ion-refresher-content>
+        </ion-refresher>
+      <ion-list>
+
+        <ion-item id="listItem1" *ngFor="let rating of ratingList">
+          <ion-avatar item-start>
+            <img src="assets/imgs/Bruce.PNG" id="list-img">
+          </ion-avatar>
+          <div style="float:right;color:#ffb400">
+            <ion-icon name="star">{{rating.stars}}</ion-icon>
+    
+          </div>
+            <h2>Bruce Marce</h2>
+            <p>{{rating.date}}</p>
+           <div>
+              <div style="width: 60px;float: left;">
+                  
+                <p class="item-text-wrap" style=" width: 50px;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis;">{{rating.comment}}</p>
+                </div>
+                <div style="float:left; margin-top: -8px;">
+                  <button ion-button clear (click)="showComment(rating)">read more</button>
+                </div>
+              
+          </div> 
+       
+        </ion-item>
+      </ion-list>
+
+      <div style="text-align:center">
+        
+        <button ion-button id="btnControl" (click)="gotoSecond()">Next</button>
+      </div>
+
+    </ion-list>
+    <ion-list *ngSwitchCase="'second'" >
+
+      <ion-card class="static">
+        <div>
+          <div style="display: block">
+            <canvas baseChart height="250" 
+            baseChart barThikness="10" 
+            [datasets]="barChartData" 
+            [labels]="barChartLabels" 
+            [options]="barChartOptions"
+            [colors] = "barChartColors"
+            [legend]="barChartLegend" 
+            [chartType]="barChartType" 
+            (chartHover)="chartHovered($event)" 
+            (chartClick)="chartClicked($yevent)"></canvas>
+          </div>
+        </div>
+        <h2 style="text-align:center;padding:10px">Performance Chart</h2>
+      </ion-card>
+      <div style="text-align:center;padding:10px">
+
+        <button ion-button id="btnControl" (click)="gotoThird()">Next</button>
+      </div>
+    </ion-list>
+    <ion-list *ngSwitchCase="'third'">
+
+      <ion-list class="list">
+        <button ion-item (click)="presentPopover($event)" id="listItem">
+          <ion-avatar item-start>
+            <img src="assets/imgs/Bruce.PNG" id="list-img">
+          </ion-avatar>
+          <h2>Bruce Marce</h2>
+          <p>Software developer</p>
+        </button>
+
+        <button ion-item (click)="presentPopover($event)" id="listItem">
+          <ion-avatar item-start>
+            <img src="assets/imgs/David.PNG" id="list-img">
+          </ion-avatar>
+          <h2>David Bekham</h2>
+          <p>Software developer</p>
+        </button>
+               
+      </ion-list>
+      <div style="text-align:center">
+    
+
+      </div>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'Home'">
+
+      <ion-card class="static">
+        <div class="staticData">
+         
+          <ion-row>
+            <ion-col col-4>30 Days</ion-col>
+            <ion-col col-4>90 Days</ion-col>
+            <ion-col col-4>1 Year</ion-col>
+          </ion-row>
+         
+          <ion-row>
+            <ion-col col-4><ion-icon id="Star" name="star"></ion-icon></ion-col>
+            <ion-col col-4><ion-icon id="Star" name="star"></ion-icon></ion-col>
+            <ion-col col-4><ion-icon id="Star" name="star"></ion-icon></ion-col>
+          </ion-row>
+
+          <ion-row>
+              <ion-col col-4>6.12</ion-col>
+              <ion-col col-4>7.23</ion-col>
+              <ion-col col-4>5.99</ion-col>
+            </ion-row>
+              
+        </div>
+      </ion-card>
+
+      <ion-card class="static">
+        <div style="text-align:center">
+          <rating [(ngModel)]="stars" 
+            readOnly="false" 
+            emptyStarIconName="star-outline" 
+            halfStarIconName="star-half" 
+            starIconName="star"
+            nullable="true">
+          </rating>
+        </div>
+      </ion-card>
+
+      <ion-card class="commentBox">
+        <ion-textarea [(ngModel)]="comment" placeholder="Write a comment..">
+        </ion-textarea>
+      
+      </ion-card>
+      <ion-row style="float: right; margin: -50px 0px 0px 0px;">
+ 
+        <ion-col col-2 style="margin-right:10px">
+          <button id ="editable-icons" style = "width:8px" ion-button clear type="file" block (click)="getImage()">
+            <ion-icon name="attach" color="dark"></ion-icon>
+          </button>
+
+        </ion-col>
+        <ion-col col-2 style="margin-right:5px" bottom>
+          <button id ="editable-icons" type="submit" style = "width:20px" 
+          ion-button clear  block (click)="toggled = !toggled"
+          [(emojiPickerIf)]="toggled" [emojiPickerDirection]="'left'"
+          (emojiPickerSelect)="handleSelection($event)">
+            <ion-icon name="happy" color="dark"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+
+      <ion-item>
+          <p>{{imageURI}}</p>
+          <h4>Image Preview</h4>
+          <img src="{{imageFileName}}" *ngIf="imageFileName" alt="Ionic File" width="300" />
+          <button ion-button (click)="uploadFile()">Upload</button>
+      </ion-item>
+      
+      
+      <div style="text-align:center;margin-top: 40px;">
+        <button id="btnSubmit" ion-button (click)="clickSubmit()" > Submit</button>
+        <button id="btnSubmit" ion-button (click)="clickCancel()"> Cancel</button>
+      </div>
+
+    </ion-list>
+
+  </div>
+
+</ion-content>

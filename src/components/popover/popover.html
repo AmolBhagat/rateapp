@@ -1,0 +1,31 @@
+<!-- Generated template for the PopoverComponent component -->
+<div>
+  <div style="text-align:center">
+      <h2>Rate Me</h2>
+  </div>
+  <ion-list>
+    <ion-card>
+        <rating [(ngModel)]="rate" 
+          readOnly="false"
+          emptyStarIconName="star-outline"
+          halfStarIconName="star-half" 
+          starIconName="star" 
+          nullable="true" > 
+        </rating>
+      </ion-card>
+      <ion-card>
+          <ion-input type="textarea" placeholder="Write a comment..">
+          </ion-input>  
+        <div id="icons">
+          <ion-icon id="editable-icons" name="attach"></ion-icon>
+     
+          <ion-icon id="editable-icons" name="happy"></ion-icon>
+        </div>
+      </ion-card>
+      <div>
+        <button id="btnSubmit" ion-button clear (click) = "submit()">Submit</button>
+        <button id="btnCancel" ion-button clear (click) = "cancel()">Cancel</button>
+      </div>
+    </ion-list>
+
+</div>

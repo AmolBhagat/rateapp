@@ -1,0 +1,32 @@
+popover {
+    ul {
+        padding: 0px;
+       
+        &.rating li {
+          padding: 5px 10px !important;
+          background: none;
+          color: #ffb400;
+       
+          ion-icon {
+            font-size: 30px;
+          }
+        }
+    }
+    #icons{
+        float:right;
+        
+    }
+    #editable-icons{
+        padding: 10px;
+    }
+    h2{
+        font-family:  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    #btnSubmit{
+        font-family:  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    #btnCancel{
+        font-family:  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    
+}

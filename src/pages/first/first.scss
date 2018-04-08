@@ -1,0 +1,200 @@
+page-first {
+    ion-header{
+       // background-image: url('../assets/imgs/header.jpg');
+        background-color:rgb(82, 79, 79);
+        background-image:linear-gradient(to top, #0d1215, #ccffff);
+    }
+ 
+    ion-content{
+      //  background-image: url('../assets/imgs/wallpaper1.png');
+        background-image:linear-gradient(to top, #f4f4f4, #ffffff);
+        
+    }
+    .segment-md .segment-button.activated, .segment-md .segment-button.segment-activated {
+        border-color: white;
+    }
+    #toolbarlabel{
+        font-family:  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    .static{
+      
+            box-shadow: 0px 0px 10px #dad8c4;
+            border-radius: 10px;
+            font-family:  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    .commentBox{
+        box-shadow: 0px 0px 10px #dad8c4;
+        border-radius: 10px;
+        font-family:  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        height: 70px;
+    }
+    .staticData{
+        text-align: center !important;
+    }
+ 
+    #listItem{
+        background: transparent;
+        box-shadow:  0px 0px 5px #dad8c4;
+        margin: 1px;
+        margin-top: 5px;
+        font-family:  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    #listItem1{
+        background: transparent;
+        box-shadow:  0px 0px 5px #dad8c4;
+        margin: 1px;
+        margin-top: 5px;
+        //font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    
+    .list-md .item-block .item-inner{
+        border-bottom:none !important;
+    }
+    #listItem:active{
+        background: rgb(63, 61, 59);
+       
+        opacity: 0.8;
+    }
+    #logo{
+        float:left;
+        background:transparent;
+        height: 50px;
+        width:80px;
+        
+        margin-top: 5px;
+        padding:5px;
+    }
+    #username{
+        float: right;
+        margin-left: 22px;
+        margin-top: 20px;
+        color: whitesmoke;
+        font-family:  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    #profile{
+        float: right;
+        height: 50px;
+        width:50px;
+        border-radius: 50%;
+        padding:5px;
+    }
+    label{
+        color:white;
+        font-family: bold;
+        text-transform: none;
+        font-size: 14px;
+
+    }
+    .container {
+        width: 50px;
+        white-space: nowrap;
+        overflow: hidden;
+        overflow: hidden;
+   }
+   .show {
+        overflow: visible;
+        height: auto;
+   }
+    #Star{
+        margin: 5px 0px;
+        font-size: 40px;
+        color: #ffb400;
+    }
+    #rateData{
+        float:left;
+        padding:20px;
+        width: 100px;
+    }
+    #editable-stars{
+        padding:5px;
+        font-size: 30px;
+        color: green;
+    }
+    #icons{
+        float:right;
+        margin-right: 0px;
+        width: 100px;
+    
+        
+    }
+    #list-img{
+        height: 70px;
+        width: 70px;
+    }
+    #editable-icons{
+        padding: 5px;
+    }
+    #btnSubmit{
+        width:140px;
+        border-radius:10px;
+        background:transparent;
+        color: transparentize($color: #000000, $amount: 0);
+        box-shadow:   0px 1px 10px #1f1f1d;
+        font-family:  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+       
+    }
+    #btnControl{
+        width:140px;
+        border-radius:10px;
+        background:transparent;
+        color: transparentize($color: #000000, $amount: 0);
+        box-shadow:   0px 1px 10px #1f1f1d;
+        font-family:  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    ul {
+        padding: 0px;
+       
+        &.rating li {
+          padding: 5px 10px !important;
+          background: none;
+          color: #ffb400;
+       
+          ion-icon {
+            font-size: 30px;
+          }
+        }
+    }
+    list a.item{
+            border-top: 0px;
+            border-left: 0px;
+            border-right: 0px;
+            border-bottom: 0px;
+        }
+    canvas labels{
+        color:white;
+    }
+    ion-textarea{
+        font-family:  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    @media (min-width: 258px)
+    {[_nghost-c2] {
+        margin: -385px 0px 0px -259px;
+        width: 370px;
+        
+    }}
+    [_nghost-c1] {
+        
+       margin-top:10px;
+        transform: translate(-56px, -403px);
+        position: fixed;
+    }
+ 
+    .segment-md .segment-button{
+        margin-top: 0px !important;
+        color: black;
+        margin: 0px -11px 2px -7px;
+    }
+    // a, a div, a span, a ion-icon, a ion-label, button, button div, button span, button ion-icon, button ion-label, [tappable], [tappable] div, [tappable] span, [tappable] ion-icon, [tappable] ion-label, input, textarea {
+    //     //-ms-touch-action: manipulation;
+    //     touch-action: auto !important;
+    // }
+    .input-cover {
+
+        position: relative;
+        //-ms-touch-action: manipulation;
+        touch-action: auto;
+    }
+}

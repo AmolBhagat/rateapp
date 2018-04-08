@@ -1,0 +1,33 @@
+page-home {
+    ion-content {
+       // background-image: url('../assets/imgs/wallpaper1.png');
+       // background-image:linear-gradient(to top, #133f3f, #ccffff);
+       background-image:linear-gradient(to top,  #FFFFC9, #5da9a2);
+    }
+    .ion-input{
+        width:300px;
+        margin:0px auto;
+        background:transparent;
+        color: black;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        
+    }
+    .btnSignIn{
+        background-color:#ff751a;
+        width:200px;
+        border-radius:10px;
+        margin-top:40px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    }
+    #logo{
+        background:transparent;
+        height: 150px;
+        width:200px;
+    }
+    .ion-input ion-icon{
+        color: black;
+        
+    }
+ 
+}
