@@ -15,6 +15,7 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ApiService } from './service/service-api';
 import { CommonModule } from '@angular/common';
 import { EmojiPickerModule } from '@ionic-tools/emoji-picker';
+import { Ng2OrderModule } from 'ng2-order-pipe';
 
 import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
 import { File } from '@ionic-native/file';
@@ -36,6 +37,7 @@ import { Camera } from '@ionic-native/camera';
     HttpModule,
     FormsModule,
     ReactiveFormsModule,
+    Ng2OrderModule,
     CommonModule
   ],
   bootstrap: [IonicApp],

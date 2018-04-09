@@ -23,7 +23,7 @@
       <ion-segment-button value="{{sections.first}}" (click)=" getRatingList()">
         <label id="toolbarlabel">Rating History</label>
       </ion-segment-button>
-      <ion-segment-button id="btncharts" value="{{sections.second}}" (click)="getGraphData()">
+      <ion-segment-button id="charts" value="{{sections.second}}" (click)="getGraphData()">
         <label id="toolbarlabel">Charts</label>
       </ion-segment-button>
       <ion-segment-button value="{{sections.third}}">
@@ -53,7 +53,8 @@
     
           </div>
             <h2>Bruce Marce</h2>
-            <p>{{rating.date}}</p>
+            
+            <p>{{ rating.date | orderBy : reverse }}</p>
            <div>
               <div style="width: 60px;float: left;">
                   
@@ -65,9 +66,8 @@
                 <div style="float:left; margin-top: -8px;">
                   <button ion-button clear (click)="showComment(rating)">read more</button>
                 </div>
-              
           </div> 
-       
+         
         </ion-item>
       </ion-list>
 
@@ -188,12 +188,12 @@
         </ion-col>
       </ion-row>
 
-      <ion-item>
+     <ion-card class="static"  *ngIf="buttonClicked">
           <p>{{imageURI}}</p>
-          <h4>Image Preview</h4>
+          
           <img src="{{imageFileName}}" *ngIf="imageFileName" alt="Ionic File" width="300" />
-          <button ion-button (click)="uploadFile()">Upload</button>
-      </ion-item>
+          <button ion-button clear (click)="uploadFile()" >Upload image</button>
+    </ion-card>
       
       
       <div style="text-align:center;margin-top: 40px;">

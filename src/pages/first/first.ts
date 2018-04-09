@@ -5,7 +5,7 @@ import { ApiService } from '../../app/service/service-api';
 import {ModalController} from 'ionic-angular';
 import { PopoverComponent } from '../../components/popover/popover';
 import { EmojiPickerModule } from '@ionic-tools/emoji-picker';
-
+import { Ng2OrderModule } from 'ng2-order-pipe';
 
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
 import { Camera, CameraOptions } from '@ionic-native/camera';
@@ -124,10 +124,12 @@ export class FirstPage {
 
   getRatingList() {
     this.ratingList=[];
+
     this.apiService.getRatingList().subscribe(res => {
 
       console.log('apiresult ', res.json())
       this.ratingList=res.json();
+    
      
     })
   }
@@ -225,7 +227,12 @@ export class FirstPage {
   handleSelection(event) {
     this.comment = this.comment + " " + event.char;
   }
+  public buttonClicked: boolean = false;
 
+  onButtonClick() {
+  
+    this.buttonClicked = !this.buttonClicked;
+  }
   getImage() {
     const options: CameraOptions = {
       quality: 100,
@@ -239,6 +246,7 @@ export class FirstPage {
       console.log(err);
       this.presentToast(err);
     });
+    this.onButtonClick();
   }
 
   uploadFile() {
@@ -256,10 +264,10 @@ export class FirstPage {
       headers: {}
     }
 
-    fileTransfer.upload(this.imageURI, 'http://192.168.0.7:8080/api/uploadImage', options)
+    fileTransfer.upload(this.imageURI, 'http://107.170.218.205:4250/upload', options)
       .then((data) => {
       console.log(data+" Uploaded Successfully");
-      this.imageFileName = "http://192.168.0.7:8080/images/ionicfile.jpg"
+      this.imageFileName = "http://107.170.218.205:4250/Images/ionicfile.jpg"
       loader.dismiss();
       this.presentToast("Image uploaded successfully");
     }, (err) => {
