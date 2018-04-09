@@ -84,7 +84,7 @@ page-first {
         color:white;
         font-family: bold;
         text-transform: none;
-        font-size: 14px;
+        font-size: 13px;
 
     }
     .container {
@@ -179,14 +179,16 @@ page-first {
         
        margin-top:10px;
         transform: translate(-56px, -403px);
-        position: fixed;
+      
     }
- 
     .segment-md .segment-button{
-        margin-top: 0px !important;
-        color: black;
-        margin: 0px -11px 2px -7px;
+        padding :0px 0px;
     }
+    // .segment-md .segment-button{
+    //     margin-top: 0px !important;
+    //     color: black;
+    //     margin: 0px -11px 2px -7px;
+    // }
     // a, a div, a span, a ion-icon, a ion-label, button, button div, button span, button ion-icon, button ion-label, [tappable], [tappable] div, [tappable] span, [tappable] ion-icon, [tappable] ion-label, input, textarea {
     //     //-ms-touch-action: manipulation;
     //     touch-action: auto !important;
