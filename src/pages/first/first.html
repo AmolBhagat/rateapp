@@ -197,7 +197,7 @@
       
       
       <div style="text-align:center;margin-top: 40px;">
-        <button id="btnSubmit" ion-button (click)="clickSubmit()" > Submit</button>
+        <button id="btnSubmit" ion-button (click)="clickSubmit()" [disabled] = 'comment.length == 0 || stars.length==0' > Submit</button>
         <button id="btnSubmit" ion-button (click)="clickCancel()"> Cancel</button>
       </div>
 
